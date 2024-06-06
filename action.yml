@@ -9,8 +9,6 @@ runs:
   image: Dockerfile
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
-  options:
-    network: host
 inputs:
   args:
     description: Additional arguments to the sonar-scanner
