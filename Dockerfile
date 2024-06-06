@@ -18,4 +18,5 @@ RUN chmod +x /entrypoint.sh
 COPY cleanup.sh /cleanup.sh
 RUN chmod +x /cleanup.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Adjust the ENTRYPOINT to include the --network flag
+ENTRYPOINT ["docker", "run", "--network=host", "sonarsource/sonar-scanner-cli:10.0", "/entrypoint.sh"]
