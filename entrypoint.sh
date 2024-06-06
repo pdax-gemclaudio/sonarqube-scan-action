@@ -2,6 +2,8 @@
 
 set -e
 
+network_flag="--network host"
+
 if [[ -z "${SONAR_TOKEN}" ]]; then
   echo "============================ WARNING ============================"
   echo "Running this GitHub Action without SONAR_TOKEN is not recommended"
@@ -33,5 +35,5 @@ fi
 unset JAVA_HOME
 
 eval "args=(${INPUT_ARGS})"
-sonar-scanner $debug_flag "-Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR}" "${args[@]}"
+sonar-scanner $debug_flag $network_flag "-Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR}" "${args[@]}"
 
