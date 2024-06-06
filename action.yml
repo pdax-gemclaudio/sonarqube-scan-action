@@ -5,7 +5,7 @@ branding:
   icon: check
   color: green
 runs:
-  using: docker --net=host
+  using: docker
   image: Dockerfile
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
