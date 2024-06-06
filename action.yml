@@ -6,6 +6,7 @@ branding:
   color: green
 runs:
   using: docker
+  network_mode: host
   image: Dockerfile
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
