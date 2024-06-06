@@ -5,11 +5,10 @@ branding:
   icon: check
   color: green
 runs:
-  using: docker
-  image: Dockerfile
+  uses: docker/setup-buildx-action@v2
   with:
-    build-args:
-      driver-opts: network=host
+    driver-opts: network=host
+  image: Dockerfile
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
 inputs:
