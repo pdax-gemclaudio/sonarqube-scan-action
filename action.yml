@@ -6,8 +6,6 @@ branding:
   color: green
 runs:
   using: docker
-  with:
-    driver-opts: network=host
   image: Dockerfile
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
