@@ -7,6 +7,9 @@ branding:
 runs:
   using: docker
   image: Dockerfile
+  with:
+    build-args:
+      driver-opts: network=host
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
 inputs:
