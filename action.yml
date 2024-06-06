@@ -5,7 +5,7 @@ branding:
   icon: check
   color: green
 runs:
-  uses: docker/setup-buildx-action@v3
+  using: docker
   with:
     driver-opts: network=host
   image: Dockerfile
